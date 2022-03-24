@@ -1,0 +1,111 @@
+/* create Todo */
+
+.outer-box{
+    width: 500px;
+    margin: 2% auto;
+}
+
+.box{
+    font-family: 'Poppins';
+    background: #001064;
+    color: #88ffff;
+    width: 120%;
+    height: 170px;
+    margin-top: 20px;
+    padding-top: 16px ;
+   
+}
+
+
+.text-end{
+    text-align: end;
+}
+h2,p{
+    text-align: center;
+    margin: 0;
+    padding: 10px 10px 10px 0px;
+}
+input{
+    outline: none;
+    padding: 7px;
+    width: 250px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 1px 0px 14px 3px rgba(253,253,253,0.54);
+    -webkit-box-shadow: 1px 0px 14px 3px rgba(253,253,253,0.54);
+    -moz-box-shadow: 1px 0px 14px 3px rgba(253,253,253,0.54);
+}
+
+.text-submit{
+    text-align: center;
+    margin-top: 10px;
+    
+}
+.btn-submit{
+    outline: none;
+    color: white;
+    background: #ffd149;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: 15px;
+    cursor: pointer;
+  
+}
+
+button:focus{
+    outline: none;
+}
+.todo-list{
+    max-height: 210px;
+    overflow: auto;
+    width: 120%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    background:#88ffff;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(24, 25, 136);
+    padding: 15px 15px 15px 10px;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+
+
+
+.icon{
+    display:flex;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.pointer {
+    cursor: pointer;
+    align-items: center;
+}
+
+.line-through{
+    text-decoration: line-through;
+    color: green;
+}
+
+.red{
+    color: red;
+}
+.blue{
+    color: dodgerblue;
+}
+.green{
+    color: yellowgreen;
+}
