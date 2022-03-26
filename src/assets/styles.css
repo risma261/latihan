@@ -1,18 +1,27 @@
-/* create Todo */
+
+.color-nav{
+    background-color: #001064;
+}
+
+.gambar{
+ width: 300px;
+ height: 300px;
+ margin-left: 3rem;
+}
+
+/* Home Page */
 
 .outer-box{
-    width: 500px;
-    margin: 2% auto;
+    width: 400px;
+    margin: 5% auto;
 }
 
 .box{
     font-family: 'Poppins';
-    background: #001064;
-    color: #88ffff;
+    color: #001064;
     width: 120%;
-    height: 170px;
-    margin-top: 20px;
-    padding-top: 16px ;
+    height: 140px;
+    margin-bottom: 3px;
    
 }
 
@@ -20,25 +29,27 @@
 .text-end{
     text-align: end;
 }
-h2,p{
+h2,h4{
     text-align: center;
-    margin: 0;
-    padding: 10px 10px 10px 0px;
+    margin-bottom: 1%;
+    padding: 1px 10px 10px 0px;
 }
+
 input{
     outline: none;
-    padding: 7px;
-    width: 250px;
-    border-radius: 10px;
+    margin-bottom: 15%;
+    padding: 5px;
+    width: 300px;
+    border-radius: 15px;
     border: 0px;
-    box-shadow: 1px 0px 14px 3px rgba(253,253,253,0.54);
-    -webkit-box-shadow: 1px 0px 14px 3px rgba(253,253,253,0.54);
-    -moz-box-shadow: 1px 0px 14px 3px rgba(253,253,253,0.54);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.05);
 }
 
 .text-submit{
     text-align: center;
-    margin-top: 10px;
+    margin-bottom: 15%;
     
 }
 .btn-submit{
@@ -59,9 +70,10 @@ button:focus{
     outline: none;
 }
 .todo-list{
-    max-height: 210px;
+    margin-top: 10%;
+    max-height: 200px;
     overflow: auto;
-    width: 120%;
+    width: 110%;
 }
 
 ul{
@@ -73,12 +85,11 @@ ul{
 li{
     display: flex;
     justify-content: space-between;
-    background:#88ffff;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     color: rgb(24, 25, 136);
     padding: 15px 15px 15px 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(53, 50, 97);
     border-top: 1px solid white;
 }
 
@@ -109,3 +120,14 @@ li{
 .green{
     color: yellowgreen;
 }
+
+/* About Page */
+h1{
+    text-align: left;
+    color: #001064;
+    margin-top: 30%;
+
+}
+p{
+    text-align: justify;
+ }

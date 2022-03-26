@@ -1,21 +1,13 @@
-import React from 'react';
-import Sidebar from './components/Sidebar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './pages/About';
-import Home from './pages/CreateTodo';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarMenu from './components/NavbarMenu';
 
-function App() {
+
+export default function App() {
   return (
+     <div>
+      <NavbarMenu/>
+     </div>
 
-    <BrowserRouter>
-      <Sidebar />
-      <Routes>
-        <Route path='/' exact component={Home}/>
-        <Route path='/About' exact component={About}/>
-      </Routes>
-    </BrowserRouter>
-
-  );
+  )
 }
-
-export default App;
