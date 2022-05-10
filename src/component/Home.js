@@ -70,7 +70,7 @@ mutation MyMutation($id: uuid = "") {
 `
 
 const InsertPassenger = gql`
-mutation MyMutation2($jenis_kelamin: string = "", $nama:string, $umur:string) {
+mutation MyMutation2($jenis_kelamin: String = "", $nama:String, $umur:numeric) {
   insert_passenger(objects: {jenis_kelamin: $jenis_kelamin, nama: $nama, umur: $umur}) {
     returning {
       id
@@ -83,16 +83,16 @@ mutation MyMutation2($jenis_kelamin: string = "", $nama:string, $umur:string) {
 `
 
 const DeletePassenger = gql`
-mutation MyMutation3($id: int!) {
-  delete_passenger_by_pk(id: $id1) {
+mutation MyMutation3($id: uuid!) {
+  delete_passenger_by_pk(id: $id) {
     id
   }
 }
 `
 
 function Home() {
-  // const [getPassenger, {data:dataquery, loading, error}] = useLazyQuery(getQueryPassenger);
-  const [getPassenger, {data:dataquery, loading, error}] = useLazyQuery(getPassengerById);
+  const [getPassenger, {data:dataQuery, loading, error}] = useLazyQuery(getQueryPassenger);
+  // const [getPassenger, {data:dataquery, loading, error}] = useLazyQuery(getPassengerById);
   const [PassengerId, setPassengerId] = useState(0);
   const [updatePassenger, { loading: loadingUpdate}] = useMutation(UpdatePassenger)
   const [insertPassenger, { loading: loadingInsert, data:dataInserted}] = useMutation(InsertPassenger, {
@@ -103,24 +103,27 @@ function Home() {
   })
   const [data, setData] = useState(defaultValue);
 
-  console.log(dataquery);
-  console.log(dataquery?.passenger);
-  console.log("data", data);
-  if(loading || loadingUpdate  || loadingInsert || loadingDelete) {
-    <LoadingSvg />;
-  }
 
-  if(error) {
-    console.log(error)
-    return null
-  }
+  useEffect(() =>{
+    getPassenger({})
+  },[])
+  
+  useEffect(() =>{
+    if(!loading){
+      console.log(dataQuery)
+    }
+  },[dataQuery,loading])
+  
+  // console.log(dataQuery);
+  // console.log(dataQuery?.passenger);
+  // console.log("data", data);
   
   const editPassenger = (idx) => {
     updatePassenger({variables: {
       id: idx
     }})
   };
-
+  
   const hapusPengunjung = (idx) => {
     deletePassenger({
       variables:{
@@ -128,7 +131,7 @@ function Home() {
       }
     })
   };
-
+  
   const tambahPengunjung = (newUser) => {
     const newPassenger = {
       id: uuidv4(),
@@ -141,28 +144,39 @@ function Home() {
         ...newPassenger
       }
     })
-
+    
     setData([newPassenger]);
   };
-
-  useEffect(()=>{
-    console.log(dataInserted)
-  },[dataInserted])
-
+  
+  
+  
   const onGetData = () => {
     getPassenger({
       variables:{
         _eq: PassengerId, 
       }
     })
-   setData(setPassengerId?.passenger);
+    setData(setPassengerId?.passenger);
   }
   
-
+  
   const onChangePassengerId = (e) => {
     if(e.target){
       setPassengerId(e.target.value)
     }
+  }
+  
+  useEffect(()=>{
+    console.log(dataInserted)
+  },[dataInserted])
+  
+  if(loading || loadingUpdate  || loadingInsert || loadingDelete) {
+    <LoadingSvg />;
+  }
+
+  if(error) {
+    console.log(error)
+    return null
   }
 
   return (
@@ -170,7 +184,7 @@ function Home() {
       <input value={PassengerId} onChange={onChangePassengerId} />
       <button onClick={onGetData}>Get Data</button>
       <Header />
-      <ListPassenger data={dataquery?.passenger} hapusPengunjung={hapusPengunjung} />
+      <ListPassenger data={dataQuery?.passenger} hapusPengunjung={hapusPengunjung} />
       <PassengerInput tambahPengunjung={tambahPengunjung} />  
     </div>
   );
