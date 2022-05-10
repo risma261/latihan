@@ -1,0 +1,54 @@
+{
+  "data": {
+    "passenger": [
+      {
+        "id": "b7a9dd29-a3fc-4d01-a130-9dd6246fbd50",
+        "nama": "Sinta",
+        "umur": 20,
+        "jenis_kelamin": "wanita"
+      },
+      {
+        "id": "6be1dfe4-96d6-409c-99bf-1e727677586c",
+        "nama": "Angga",
+        "umur": 21,
+        "jenis_kelamin": "Pria"
+      },
+      {
+        "id": "46cd040a-74ca-48fa-80a3-c81e04800272",
+        "nama": "Adam",
+        "umur": 20,
+        "jenis_kelamin": "Pria"
+      },
+      {
+        "id": "c0e6f8b0-de5c-4871-a75b-2b113da69d0b",
+        "nama": "Yoga",
+        "umur": 22,
+        "jenis_kelamin": "Pria"
+      },
+      {
+        "id": "e230b355-69da-4e64-8350-595e7f16e202",
+        "nama": "Ria",
+        "umur": 19,
+        "jenis_kelamin": "Wanita"
+      },
+      {
+        "id": "6b88b990-aae1-44a6-8d17-ec63c2594250",
+        "nama": "Fahmi",
+        "umur": 25,
+        "jenis_kelamin": "Pria"
+      },
+      {
+        "id": "02f3fd7e-80d0-4f3e-8546-e528a9bdb315",
+        "nama": "Lala",
+        "umur": 21,
+        "jenis_kelamin": "Wanita"
+      },
+      {
+        "id": "ca6886a5-4616-4ca8-bcc5-aeaa4c641cf3",
+        "nama": "Ivan",
+        "umur": 25,
+        "jenis_kelamin": "Pria"
+      }
+    ]
+  }
+}
